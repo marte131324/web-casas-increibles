@@ -1778,17 +1778,18 @@ h1, h2, h3, h4 {
 
 /* Active card state */
 .zones__list .zone-card.active {
-  background: rgba(59, 130, 246, 0.12);
-  border-color: var(--accent-blue);
-  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.25);
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: inset 0 0 20px rgba(59, 130, 246, 0.05), 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .zones__list .zone-card.active .zone-card__name {
-  color: var(--accent-blue);
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .zones__list .zone-card.active .zone-card__count {
-  color: var(--silver-light);
+  color: var(--accent-blue);
 }
 
 .zones__interactive {
