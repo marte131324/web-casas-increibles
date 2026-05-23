@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>01. Requerimientos de Onboarding — Casas Increíbles</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+    * { margin:0; padding:0; box-sizing:border-box; }
+    @page { size: letter; margin: 2cm 2.5cm; }
+    body { font-family:'Inter',sans-serif; color:#1e293b; line-height:1.7; padding:40px 50px; max-width:850px; margin:0 auto; }
+    .header { border-bottom:3px solid #0e86b0; padding-bottom:18px; margin-bottom:30px; display:flex; justify-content:space-between; align-items:flex-end; }
+    .header h1 { font-size:1.6rem; font-weight:800; color:#042d3d; }
+    .header .sub { font-size:0.8rem; color:#64748b; }
+    .badge { display:inline-block; background:#0e86b0; color:white; padding:4px 12px; border-radius:20px; font-size:0.7rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+    h2 { font-size:1.15rem; font-weight:700; color:#0e86b0; margin:28px 0 12px; padding-bottom:6px; border-bottom:1px solid #e2e8f0; }
+    h3 { font-size:0.95rem; font-weight:700; color:#334155; margin:18px 0 8px; }
+    p, li { font-size:0.88rem; color:#475569; }
+    ul, ol { padding-left:22px; margin:8px 0; }
+    li { margin:6px 0; }
+    .section-card { background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:20px 24px; margin:16px 0; page-break-inside:avoid; }
+    .section-card h3 { margin-top:0; color:#0e86b0; }
+    .req-tag { display:inline-block; background:#fef3c7; color:#92400e; padding:2px 8px; border-radius:6px; font-size:0.72rem; font-weight:600; margin-left:6px; }
+    .opt-tag { display:inline-block; background:#dbeafe; color:#1e40af; padding:2px 8px; border-radius:6px; font-size:0.72rem; font-weight:600; margin-left:6px; }
+    .step { display:flex; gap:14px; margin:12px 0; align-items:flex-start; }
+    .step-num { background:#0e86b0; color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:0.8rem; flex-shrink:0; margin-top:2px; }
+    .step-text { flex:1; }
+    .tip { background:#f0fdf4; border-left:4px solid #22c55e; padding:12px 16px; border-radius:0 8px 8px 0; margin:14px 0; font-size:0.84rem; color:#166534; }
+    .warn { background:#fef3c7; border-left:4px solid #f59e0b; padding:12px 16px; border-radius:0 8px 8px 0; margin:14px 0; font-size:0.84rem; color:#92400e; }
+    .note { background:#eff6ff; border-left:4px solid #0e86b0; padding:12px 16px; border-radius:0 8px 8px 0; margin:14px 0; font-size:0.84rem; color:#1e40af; }
+    .security { background:#fef2f2; border-left:4px solid #ef4444; padding:12px 16px; border-radius:0 8px 8px 0; margin:14px 0; font-size:0.84rem; color:#991b1b; }
+    .footer { margin-top:40px; padding-top:16px; border-top:2px solid #e2e8f0; font-size:0.75rem; color:#94a3b8; text-align:center; }
+    @media print { body { padding:0; } .section-card { break-inside:avoid; } }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <span class="badge">Documento 1 de 3</span>
+      <h1>📋 Requerimientos de Onboarding</h1>
+      <div class="sub">Casas Increíbles — Lista de Información para Lanzamiento en Vivo</div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-size:0.75rem; color:#94a3b8;">TREZE LABS — Infraestructura Digital Premium</div>
+      <div style="font-size:0.75rem; color:#94a3b8;">Mayo 2026</div>
+    </div>
+  </div>
+
+  <p>Para proceder con la inyección de datos reales, conectar tu dominio personalizado y realizar el despliegue definitivo de tu portal inmobiliario, es indispensable recabar la información descrita a continuación. Por favor, provee los elementos listados para incorporarlos al sistema en un plazo estimado de 48 horas hábiles.</p>
+
+  <h2>1. Identidad de Marca y Medios</h2>
+
+  <div class="section-card">
+    <h3>1.1 Logotipo Oficial y Favicon <span class="req-tag">Requerido</span></h3>
+    <p>Logotipo oficial de la inmobiliaria en alta resolución (preferentemente en formato PNG con fondo transparente o SVG). Favicon (icono pequeño que aparece en la pestaña del navegador, formato PNG de 32x32px o archivo .ico).</p>
+  </div>
+
+  <div class="section-card">
+    <h3>1.2 Fotografía Hero de Portada <span class="req-tag">Requerido</span></h3>
+    <p>Imagen principal de portada en alta resolución que represente el estilo y exclusividad de tus propiedades (resolución mínima recomendada: 1920x1080px en formato JPG optimizado para web).</p>
+  </div>
+
+  <h2>2. Catálogo de Propiedades Reales</h2>
+
+  <div class="section-card">
+    <h3>2.1 Detalles de Propiedades <span class="req-tag">Requerido</span></h3>
+    <p>Para cada propiedad a cargar en el sistema (hasta un límite de 8 propiedades en la fase de lanzamiento), se requiere proporcionar la siguiente ficha técnica:</p>
+    <ul>
+      <li><strong>Título descriptivo:</strong> (Ej. "Casa Residencial Las Olas").</li>
+      <li><strong>Ubicación:</strong> Zona o fraccionamiento específico (Ej. "Riviera Veracruzana").</li>
+      <li><strong>Precio:</strong> Monto en MXN (indicando si es en Venta o Renta).</li>
+      <li><strong>Especificaciones:</strong> Número de recámaras, baños, metros cuadrados de construcción/terreno y cajones de estacionamiento.</li>
+      <li><strong>Fotografías:</strong> Entre 1 y 3 imágenes en alta definición por propiedad (relación de aspecto sugerida 4:3 o 16:9).</li>
+    </ul>
+  </div>
+
+  <h2>3. Contacto y Enlaces del Asesor</h2>
+
+  <div class="section-card">
+    <h3>3.1 Información de WhatsApp Oficial <span class="req-tag">Requerido</span></h3>
+    <p>Número de teléfono celular (incluyendo clave de país, ej: +52) que recibirá las consultas automáticas de los clientes directamente en su chat. Cada propiedad generará un mensaje pre-configurado que se enviará a este número.</p>
+  </div>
+
+  <div class="section-card">
+    <h3>3.2 Zonas de Inversión y Plusvalía <span class="opt-tag">Opcional</span></h3>
+    <p>Datos estadísticos o descripciones de las zonas de influencia inmobiliaria que deseas promover (Ej. Riviera Veracruzana, Boca del Río, Medellín de Bravo) con sus respectivos porcentajes estimados de plusvalía anual si deseas modificar los predeterminados.</p>
+  </div>
+
+  <h2>4. Configuración SEO y Redes Sociales</h2>
+
+  <div class="section-card">
+    <h3>4.1 Metadatos y OpenGraph <span class="req-tag">Requerido</span></h3>
+    <p>Imagen de vista previa para compartir el enlace en WhatsApp/Facebook (dimensiones recomendadas: 1200x630px), título SEO corto y descripción corta del portal (máximo 160 caracteres) para el posicionamiento en Google.</p>
+  </div>
+
+  <h2>5. Condiciones Comerciales y Esquema de Pagos</h2>
+
+  <div class="section-card">
+    <h3>5.1 Monto y Estructura de Pagos <span class="req-tag">Requerido</span></h3>
+    <p>El desarrollo y despliegue del portal inmobiliario Casas Increíbles contempla un costo único de inversión. No existen pagos recurrentes ni rentas mensuales por el uso del software o su infraestructura serverless.</p>
+    <ul>
+      <li><strong>Monto Total de Inversión:</strong> $5,000.00 MXN (Cinco mil pesos 00/100 M.N.).</li>
+      <li><strong>Esquema de Pago 50/50:</strong>
+        <ul>
+          <li><strong>50% de Anticipo ($2,500.00 MXN):</strong> Requerido al aceptar esta propuesta técnica de diseño y para dar inicio formal al proceso de onboarding, estructuración de archivos e inyección de datos reales.</li>
+          <li><strong>50% de Finiquito ($2,500.00 MXN):</strong> Liquidado una vez realizados y aprobados todos los ajustes finales de usabilidad (lapso estándar de resolución de 48 horas hábiles a partir de la inyección de información).</li>
+        </ul>
+      </li>
+      <li><strong>Método de Pago:</strong> Transferencia electrónica bancaria (SPEI). Los datos de la cuenta de depósito se proporcionarán de forma directa y privada por el canal de soporte.</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <strong>💡 Recomendación Treze:</strong> Envía todos los materiales (imágenes, textos y fichas técnicas) organizados dentro de una carpeta en Google Drive o Dropbox para agilizar su procesamiento y optimización antes de inyectarlos al código de producción.
+  </div>
+
+  <div class="footer">
+    CASAS INCREÍBLES — Documentación de Entrega &copy; 2026 TREZE LABS — Infraestructura Digital Premium<br>
+    Este documento es confidencial y exclusivo para el cliente.
+  </div>
+
+</body>
+</html>

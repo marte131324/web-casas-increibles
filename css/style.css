@@ -149,12 +149,12 @@ h1, h2, h3, h4 {
 }
 
 .header__logo img {
-  height: 50px;
+  height: 64px; /* Slightly larger as requested (increased from 58px) */
   transition: all var(--t-fast);
 }
 
 .header--scrolled .header__logo img {
-  height: 40px;
+  height: 48px; /* Proportionally larger on scroll (increased from 46px) */
   filter: brightness(0) saturate(100%) invert(14%) sepia(45%) saturate(2250%) hue-rotate(205deg) brightness(90%) contrast(95%);
 }
 
@@ -265,6 +265,18 @@ h1, h2, h3, h4 {
   margin-left: 8%;
 }
 
+.hero__brand {
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  animation: heroFadeUp 1s var(--ease-out) 0.1s forwards;
+}
+
+.hero__brand-logo {
+  height: 55px; /* Elegant brand size */
+  width: auto;
+  object-fit: contain;
+}
+
 .hero__badge {
   display: inline-flex;
   align-items: center;
@@ -277,15 +289,15 @@ h1, h2, h3, h4 {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .hero__title {
-  font-size: 4.2rem;
+  font-size: 3.6rem; /* Reduced from 4.2rem for cleaner balance */
   color: white;
-  line-height: 1.08;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
   opacity: 0;
   animation: heroFadeUp 1s var(--ease-out) 0.3s forwards;
@@ -297,11 +309,11 @@ h1, h2, h3, h4 {
 }
 
 .hero__subtitle {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--silver);
   font-weight: 300;
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
+  line-height: 1.65;
+  margin-bottom: 2rem;
   max-width: 500px;
   opacity: 0;
   animation: heroFadeUp 1s var(--ease-out) 0.6s forwards;
@@ -318,45 +330,48 @@ h1, h2, h3, h4 {
 .hero__btn-primary {
   background: var(--white);
   color: var(--navy-dark);
-  padding: 1rem 2rem;
+  padding: 0.9rem 1.8rem; /* Slightly more compact and sleek */
   border-radius: 50px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.6rem;
   transition: all var(--t-fast);
   border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .hero__btn-primary:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: 0 12px 35px rgba(255,255,255,0.15);
 }
 
 .hero__btn-secondary {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.05); /* Added subtle overlay */
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.9rem 1.8rem; /* Slightly more compact and sleek */
   border-radius: 50px;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  border: 1.5px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.25); /* Thinner border */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: all var(--t-fast);
 }
 
 .hero__btn-secondary:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.12);
   border-color: rgba(255,255,255,0.5);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .hero__scroll {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 3.5rem; /* Lowered from 7.5rem to restore spacing under buttons */
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
@@ -388,17 +403,17 @@ h1, h2, h3, h4 {
 
 /* ═══════ STATS STRIP ═══════ */
 .stats-strip {
-  background: transparent;
-  padding: 0;
+  background: var(--navy-deep); /* Dark background to connect sections */
+  padding: 5rem 0; /* Premium spacious padding */
   position: relative;
   z-index: 10;
-  margin-top: -3.5rem;
+  margin-top: 0; /* Removed negative margin on desktop to prevent crowding */
 }
 
 .stats-strip .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background: rgba(6, 12, 28, 0.7);
+  background: rgba(6, 12, 28, 0.78);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1146,6 +1161,7 @@ h1, h2, h3, h4 {
 @media (max-width: 768px) {
   .header__nav { display: none; }
   .header__mobile-toggle { display: block; }
+  .header__cta { display: none; } /* Ocultar en móviles */
 
   .hero {
     min-height: 100dvh;
@@ -1270,66 +1286,6 @@ h1, h2, h3, h4 {
 
   .cta-section .container { grid-template-columns: 1fr; }
 
-  /* Scrollytelling Mobile Overrides */
-  .scrollytelling__sticky {
-    height: 100dvh;
-  }
-
-  .scrollytelling__video {
-    display: block;
-  }
-
-  .scrollytelling__content {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 1rem;
-  }
-
-  .scrollytelling__slide {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    width: 92%;
-    max-width: 310px;
-    padding: 0.7rem 0.9rem;
-    background: rgba(6, 12, 28, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 12px;
-    transform: translateX(-50%) translateY(10px);
-    opacity: 0;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  }
-
-  .scrollytelling__slide.active {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-
-  .scrollytelling__slide .section-label {
-    font-size: 0.58rem;
-    letter-spacing: 1.5px;
-    margin-bottom: 0.2rem;
-    display: inline-block;
-  }
-
-  .scrollytelling__slide h2 {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .scrollytelling__slide p {
-    font-size: 0.72rem;
-    line-height: 1.35;
-    color: var(--silver-light);
-  }
-
   .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer__bottom { flex-direction: column; text-align: center; }
 }
@@ -1337,6 +1293,8 @@ h1, h2, h3, h4 {
 @media (max-width: 480px) {
   .container { padding: 0 1rem; }
   .section-title { font-size: 1.8rem; }
+  .hero__brand { margin-bottom: 1rem; }
+  .hero__brand-logo { height: 42px; }
   .hero__title { font-size: 1.8rem; line-height: 1.15; letter-spacing: -0.5px; }
   .hero__subtitle { font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.5rem; }
   .hero__badge {
@@ -1429,6 +1387,7 @@ h1, h2, h3, h4 {
   pointer-events: none;
   opacity: 0.7;
   transform-origin: center center;
+  transform: scale(1.10); /* Increased base scale to hide watermark on desktop */
   transition: transform 0.1s linear;
   will-change: transform;
 }
@@ -1929,6 +1888,23 @@ h1, h2, h3, h4 {
   color: white;
 }
 
+.lifestyle .section-title {
+  color: white;
+}
+
+.lifestyle .section-desc {
+  color: var(--silver-light); /* Improved contrast from var(--silver) */
+  opacity: 0.95;
+}
+
+.lifestyle .section-label {
+  color: var(--silver-light);
+}
+
+.lifestyle .section-label::before {
+  background: var(--silver-light);
+}
+
 .lifestyle__card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -1976,6 +1952,7 @@ h1, h2, h3, h4 {
   color: white;
   margin-bottom: 2rem;
   text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65); /* Added subtle shadow for crisp readability */
 }
 
 .quiz-options {
@@ -2040,8 +2017,9 @@ h1, h2, h3, h4 {
 
 .quiz-option span {
   font-size: 0.8rem;
-  color: var(--silver-dark);
+  color: #d1d5db; /* Improved readability, changed from var(--silver-dark) (#8b919c) */
   line-height: 1.4;
+  opacity: 0.9;
 }
 
 .quiz-nav {
@@ -2254,3 +2232,138 @@ h1, h2, h3, h4 {
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(37,211,102,0.3);
 }
+
+/* ═══════ SCROLLYTELLING RESPONSIVE OVERRIDES (PLACED LAST TO AVOID CASCADE BUGS) ═══════ */
+@media (max-width: 768px) {
+  .scrollytelling__sticky {
+    height: 100dvh;
+  }
+  .scrollytelling__video {
+    display: block;
+    transform: scale(1.06); /* Maintain 1.06 base scale on mobile/tablet */
+  }
+  .scrollytelling__overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(6, 12, 28, 0.2) 0%,
+      rgba(6, 12, 28, 0.85) 100%
+    );
+  }
+  .scrollytelling__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 2.5rem;
+  }
+  .scrollytelling__slide {
+    position: absolute;
+    bottom: 5rem;
+    left: 2.5rem;
+    right: 2.5rem;
+    width: auto;
+    max-width: 500px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    text-align: left;
+    transform: translateY(15px);
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .scrollytelling__slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .scrollytelling__slide .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--silver-dark);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .scrollytelling__slide h2 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  .scrollytelling__slide p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollytelling__content {
+    padding: 1.5rem;
+  }
+  .scrollytelling__slide {
+    bottom: 4.5rem; /* Raised to clear mobile address bars safely */
+    left: 1.5rem;
+    right: 1.5rem;
+    max-width: none;
+  }
+  .scrollytelling__slide .section-label {
+    font-size: 0.6rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.3rem;
+  }
+  .scrollytelling__slide h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0.4rem;
+  }
+  .scrollytelling__slide p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   BOTÓN FLOTANTE DE WHATSAPP
+   ══════════════════════════════════════════════ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: all var(--t-fast);
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-5px);
+  background-color: #20ba5a;
+  box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+}
+

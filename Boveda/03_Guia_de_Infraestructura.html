@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>03. Guía de Infraestructura y Respaldo — Casas Increíbles</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+    * { margin:0; padding:0; box-sizing:border-box; }
+    @page { size: letter; margin: 2cm 2.5cm; }
+    body { font-family:'Inter',sans-serif; color:#1e293b; line-height:1.7; padding:40px 50px; max-width:850px; margin:0 auto; }
+    .header { border-bottom:3px solid #0e86b0; padding-bottom:18px; margin-bottom:30px; display:flex; justify-content:space-between; align-items:flex-end; }
+    .header h1 { font-size:1.6rem; font-weight:800; color:#042d3d; }
+    .header .sub { font-size:0.8rem; color:#64748b; }
+    .badge { display:inline-block; background:#0e86b0; color:white; padding:4px 12px; border-radius:20px; font-size:0.7rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; }
+    h2 { font-size:1.15rem; font-weight:700; color:#0e86b0; margin:28px 0 12px; padding-bottom:6px; border-bottom:1px solid #e2e8f0; }
+    h3 { font-size:0.95rem; font-weight:700; color:#334155; margin:18px 0 8px; }
+    p, li { font-size:0.88rem; color:#475569; }
+    ul, ol { padding-left:22px; margin:8px 0; }
+    li { margin:6px 0; }
+    .section-card { background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:20px 24px; margin:16px 0; page-break-inside:avoid; }
+    .section-card h3 { margin-top:0; color:#0e86b0; }
+    .tree { font-family:'Courier New', monospace; background:#0f172a; color:#94a3b8; padding:20px 24px; border-radius:12px; font-size:0.82rem; line-height:1.9; margin:16px 0; }
+    .tree .folder { color:#22d3ee; font-weight:700; }
+    .tree .file { color:#a5f3fc; }
+    .tree .desc { color:#64748b; font-style:italic; }
+    .tree .critical { color:#f97316; font-weight:700; }
+    .tip { background:#f0fdf4; border-left:4px solid #22c55e; padding:12px 16px; border-radius:0 8px 8px 0; margin:14px 0; font-size:0.84rem; color:#166534; }
+    .warn { background:#fef3c7; border-left:4px solid #f59e0b; padding:12px 16px; border-radius:0 8px 8px 0; margin:14px 0; font-size:0.84rem; color:#92400e; }
+    .footer { margin-top:40px; padding-top:16px; border-top:2px solid #e2e8f0; font-size:0.75rem; color:#94a3b8; text-align:center; }
+    @media print { body { padding:0; } .section-card, .tree { break-inside:avoid; } }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <span class="badge">Documento 3 de 3</span>
+      <h1>⚙️ Infraestructura y Respaldo</h1>
+      <div class="sub">Casas Increíbles — Ficha Técnica de Servidores, Archivos y Despliegue</div>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-size:0.75rem; color:#94a3b8;">TREZE LABS — Infraestructura Digital Premium</div>
+      <div style="font-size:0.75rem; color:#94a3b8;">Mayo 2026</div>
+    </div>
+  </div>
+
+  <p>Este documento contiene las especificaciones técnicas del portal de <strong>Casas Increíbles</strong>, la estructura de carpetas de la aplicación, el esquema de alojamiento serverless y los procedimientos de despliegue a producción y respaldo.</p>
+
+  <h2>1. Arquitectura de Archivos del Proyecto</h2>
+  
+  <div class="tree">
+    <span class="folder">web-casas-increibles/</span> <span class="desc">— Directorio Raíz del Portal Web</span><br>
+    &nbsp;&nbsp;├── <span class="folder">css/</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; └── <span class="file">style.css</span> <span class="desc">— Hoja de estilos responsiva, animaciones y tokens</span><br>
+    &nbsp;&nbsp;├── <span class="folder">js/</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; ├── <span class="file">app.js</span> <span class="desc">— Motor JS: Splash, Matcher, Calculadora y Canvas Scrollytelling</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; └── <span class="file">shield.js</span> <span class="desc">— Módulo de seguridad y protección de código</span><br>
+    &nbsp;&nbsp;├── <span class="folder">img/</span> <span class="desc">— Biblioteca de Imágenes de la Inmobiliaria</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; ├── <span class="folder">propiedades/</span> <span class="desc">— Catálogo de fotos de casas reales</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; ├── <span class="folder">videos/</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; │&nbsp;&nbsp; ├── <span class="folder">frames/</span> <span class="desc">— Secuencia fotográfica optimizada para Desktop (120 frames)</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; │&nbsp;&nbsp; └── <span class="folder">frames-vertical/</span> <span class="desc">— Secuencia cinemática optimizada para Móvil</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; ├── <span class="file">logo.png</span> <span class="desc">— Logotipo oficial</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; └── <span class="file">cover-desktop.jpg</span> <span class="desc">— Portada de Hero principal</span><br>
+    &nbsp;&nbsp;├── <span class="folder">Boveda/</span> <span class="desc">— Bóveda de Entrega Oficial</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; ├── <span class="file">index.html</span> <span class="desc">— Portal de Entrega Premium</span><br>
+    &nbsp;&nbsp;│&nbsp;&nbsp; └── <span class="file">*.pdf</span> <span class="desc">— PDFs descargables de la entrega</span><br>
+    &nbsp;&nbsp;└── <span class="file">index.html</span> <span class="desc">— Archivo HTML5 base del portal inmobiliario</span>
+  </div>
+
+  <h2>2. Infraestructura Serverless e Integración en la Nube</h2>
+
+  <div class="section-card">
+    <h3>2.1 Hosting en Vercel (Serverless First)</h3>
+    <p>El portal está alojado en la infraestructura global serverless de <strong>Vercel</strong>. No requiere bases de datos tradicionales ni servidores dedicados activos, eliminando costos fijos de mantenimiento.
+    <ul>
+      <li><strong>Esquema de costos:</strong> Plan Gratuito (Hobby Tier) de por vida para proyectos de bajo/mediano tráfico. Sin cuotas de hosting mensuales.</li>
+      <li><strong>SSL/Seguridad:</strong> Certificado SSL HTTPS automático de Let's Encrypt auto-renovable de forma gratuita.</li>
+      <li><strong>Red de Distribución (CDN):</strong> Distribución global de alto rendimiento para garantizar tiempos de carga menores a 1 segundo en móviles y computadoras.</li>
+    </ul>
+  </p>
+  </div>
+
+  <div class="section-card">
+    <h3>2.2 Conexión de Dominio Propio</h3>
+    <p>Para conectar tu dominio corporativo (ej: <code>casasincreibles.com.mx</code>) al servidor de Vercel, debes ingresar al panel de tu proveedor de dominio (Godaddy, Neubox, etc.) y configurar los siguientes registros de DNS:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Nombre / Host</th>
+          <th>Valor / Destino</th>
+          <th>TTL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A</td>
+          <td>@ (Raíz)</td>
+          <td><code>76.76.21.21</code></td>
+          <td>Automático / 1 hora</td>
+        </tr>
+        <tr>
+          <td>CNAME</td>
+          <td>www</td>
+          <td><code>cname.vercel-dns.com.</code></td>
+          <td>Automático / 1 hora</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>3. Protocolos de Actualización y Respaldos</h2>
+
+  <div class="section-card">
+    <h3>3.1 Cómo Actualizar a Producción</h3>
+    <p>La inyección de información o código se realiza mediante Vercel CLI. Ante cualquier cambio local en el código o las fotos de la carpeta, puedes redesplegar instantáneamente ejecutando en tu consola:</p>
+    <p><code>vercel --prod --yes</code></p>
+    <p>Vercel compilará la versión y actualizará la URL de producción global en un lapso aproximado de 15 segundos sin interrupción del servicio.</p>
+  </div>
+
+  <div class="section-card">
+    <h3>3.2 Protocolo de Respaldo Local</h3>
+    <p>Treze Labs entrega un archivo comprimido (.zip) con el 100% del código fuente autocontenido del portal. Se recomienda guardar una copia de este archivo en un disco físico (USB) y una copia en un almacenamiento seguro en la nube (Drive/Dropbox) para garantizar la recuperación en caso de siniestro local.</p>
+  </div>
+
+  <div class="warn">
+    <strong>⚠️ Advertencia de Estabilidad:</strong> Modificar los archivos del núcleo (especialmente <code>js/app.js</code> o <code>css/style.css</code>) de forma incorrecta puede desestabilizar la sincronización del scrollytelling o la animación de carga. Cualquier cambio estructural debe realizarse bajo asesoramiento técnico.
+  </div>
+
+  <div class="footer">
+    CASAS INCREÍBLES — Documentación de Entrega &copy; 2026 TREZE LABS — Infraestructura Digital Premium<br>
+    Este documento es confidencial y exclusivo para el cliente.
+  </div>
+
+</body>
+</html>
