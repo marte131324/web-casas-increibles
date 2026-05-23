@@ -388,11 +388,11 @@ h1, h2, h3, h4 {
 
 /* ═══════ STATS STRIP ═══════ */
 .stats-strip {
-  background: transparent;
-  padding: 0;
+  background: var(--navy-deep);
+  padding: 4rem 0;
   position: relative;
   z-index: 10;
-  margin-top: -3.5rem;
+  margin-top: 0;
 }
 
 .stats-strip .container {
@@ -2066,7 +2066,7 @@ h1, h2, h3, h4 {
 
 .quiz-option span {
   font-size: 0.8rem;
-  color: var(--silver-dark);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.4;
 }
 
@@ -2181,7 +2181,7 @@ h1, h2, h3, h4 {
   display: flex;
   gap: 1.5rem;
   font-size: 0.85rem;
-  color: var(--silver-dark);
+  color: var(--silver-light);
 }
 
 .result-prop-details i {
@@ -2279,4 +2279,26 @@ h1, h2, h3, h4 {
   background: #1fb855;
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+}
+
+/* ═══════ MOBILE OVERRIDES FOR SCROLLYTELLING & STATS (SPECIFICITY REINFORCED) ═══════ */
+@media (max-width: 768px) {
+  .stats-strip {
+    margin-top: 0 !important;
+    padding: 3rem 1.5rem !important;
+    background: var(--navy-deep) !important;
+  }
+  
+  .scrollytelling__slide.active {
+    transform: translateX(-50%) translateY(0) !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-strip {
+    margin-top: 0 !important;
+    padding: 3rem 1rem !important;
+    background: var(--navy-deep) !important;
+  }
 }
