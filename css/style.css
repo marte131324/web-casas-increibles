@@ -388,17 +388,17 @@ h1, h2, h3, h4 {
 
 /* ═══════ STATS STRIP ═══════ */
 .stats-strip {
-  background: var(--navy-deep);
-  padding: 4rem 0;
+  background: transparent;
+  padding: 0;
   position: relative;
   z-index: 10;
-  margin-top: 0;
+  margin-top: -3.5rem;
 }
 
 .stats-strip .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background: rgba(6, 12, 28, 0.75);
+  background: rgba(6, 12, 28, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1170,37 +1170,30 @@ h1, h2, h3, h4 {
   .hero__overlay {
     background: linear-gradient(
       to bottom,
-      rgba(6, 12, 28, 0.2) 0%,
-      rgba(6, 12, 28, 0.6) 60%,
-      rgba(6, 12, 28, 0.9) 100%
+      rgba(6, 12, 28, 0.95) 0%,
+      rgba(6, 12, 28, 0.8) 50%,
+      rgba(6, 12, 28, 0.5) 100%
     );
   }
 
   .hero__title {
-    font-size: 2rem;
-    line-height: 1.1;
+    font-size: 2.2rem;
+    line-height: 1.15;
     letter-spacing: -0.5px;
-    margin-bottom: 1rem;
-    font-weight: 500;
+    margin-bottom: 1.2rem;
   }
   .hero__subtitle {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    max-width: 90%;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 300;
+    max-width: 450px;
   }
   
   .hero__badge {
-    font-size: 0.6rem;
-    padding: 0.4rem 0.8rem;
-    margin-bottom: 1.2rem;
-    letter-spacing: 1.5px;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    font-size: 0.68rem;
+    padding: 0.4rem 0.9rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
   }
 
   .hero__btn-primary, .hero__btn-secondary {
@@ -1220,11 +1213,11 @@ h1, h2, h3, h4 {
 
   /* Bento Stats Strip Redesign */
   .stats-strip {
-    margin-top: -1.5rem;
+    margin-top: -3.5rem;
     padding: 0 1.5rem 1.5rem 1.5rem;
     position: relative;
     z-index: 10;
-    background: linear-gradient(to bottom, transparent 0%, var(--navy-deep) 1.5rem, var(--navy-deep) 100%);
+    background: linear-gradient(to bottom, transparent 0%, var(--navy-deep) 3.5rem, var(--navy-deep) 100%);
   }
   .stats-strip .container {
     grid-template-columns: repeat(2, 1fr);
@@ -1297,17 +1290,17 @@ h1, h2, h3, h4 {
 
   .scrollytelling__slide {
     position: absolute;
-    bottom: 2rem;
+    bottom: 1rem;
     left: 50%;
-    width: 90%;
-    max-width: 340px;
-    padding: 1.2rem;
-    background: rgba(6, 12, 28, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 16px;
-    transform: translateX(-50%) translateY(20px);
+    width: 92%;
+    max-width: 310px;
+    padding: 0.7rem 0.9rem;
+    background: rgba(6, 12, 28, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 12px;
+    transform: translateX(-50%) translateY(10px);
     opacity: 0;
     transition: opacity 0.6s ease, transform 0.6s ease;
     text-align: center;
@@ -1362,34 +1355,24 @@ h1, h2, h3, h4 {
   }
 
   .stats-strip {
-    margin-top: -1.5rem;
-    padding: 0 1rem 3rem 1rem;
-    background: transparent;
+    margin-top: -3rem;
+    padding: 0 0.8rem 1.5rem 0.8rem;
+    background: linear-gradient(to bottom, transparent 0%, var(--navy-deep) 3rem, var(--navy-deep) 100%);
   }
   .stats-strip .container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    border-radius: 16px;
+    gap: 0.6rem;
   }
   .stat-item {
-    padding: 1.5rem 1rem;
-    border-radius: 0;
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  .stat-item:nth-child(2n) {
-    border-right: none;
-  }
-  .stat-item:nth-child(n+3) {
-    border-bottom: none;
+    padding: 1.2rem 0.6rem;
+    border-radius: 12px;
   }
   .stat-item__number {
-    font-size: 2rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.7rem;
+    margin-bottom: 0.25rem;
   }
   .stat-item__label {
-    font-size: 0.65rem;
-    letter-spacing: 1.5px;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
   }
 
   .about__features { grid-template-columns: 1fr; }
@@ -1401,7 +1384,7 @@ h1, h2, h3, h4 {
 .splash {
   position: fixed;
   inset: 0;
-  background: var(--navy-deep);
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1778,18 +1761,17 @@ h1, h2, h3, h4 {
 
 /* Active card state */
 .zones__list .zone-card.active {
-  background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: inset 0 0 20px rgba(59, 130, 246, 0.05), 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: rgba(59, 130, 246, 0.12);
+  border-color: var(--accent-blue);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.25);
 }
 
 .zones__list .zone-card.active .zone-card__name {
-  color: white;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  color: var(--accent-blue);
 }
 
 .zones__list .zone-card.active .zone-card__count {
-  color: var(--accent-blue);
+  color: var(--silver-light);
 }
 
 .zones__interactive {
@@ -1947,14 +1929,6 @@ h1, h2, h3, h4 {
   color: white;
 }
 
-.lifestyle .section-title {
-  color: white;
-}
-
-.lifestyle .section-desc {
-  color: var(--silver);
-}
-
 .lifestyle__card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -2066,7 +2040,7 @@ h1, h2, h3, h4 {
 
 .quiz-option span {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--silver-dark);
   line-height: 1.4;
 }
 
@@ -2181,7 +2155,7 @@ h1, h2, h3, h4 {
   display: flex;
   gap: 1.5rem;
   font-size: 0.85rem;
-  color: var(--silver-light);
+  color: var(--silver-dark);
 }
 
 .result-prop-details i {
@@ -2279,26 +2253,4 @@ h1, h2, h3, h4 {
   background: #1fb855;
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(37,211,102,0.3);
-}
-
-/* ═══════ MOBILE OVERRIDES FOR SCROLLYTELLING & STATS (SPECIFICITY REINFORCED) ═══════ */
-@media (max-width: 768px) {
-  .stats-strip {
-    margin-top: 0 !important;
-    padding: 3rem 1.5rem !important;
-    background: var(--navy-deep) !important;
-  }
-  
-  .scrollytelling__slide.active {
-    transform: translateX(-50%) translateY(0) !important;
-    opacity: 1 !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .stats-strip {
-    margin-top: 0 !important;
-    padding: 3rem 1rem !important;
-    background: var(--navy-deep) !important;
-  }
 }
