@@ -32,6 +32,224 @@
 </head>
 <body>
 
+    <!-- SYSTEM LOCKOUT GATE (TREZE LABS PROTECTED SANDBOX) -->
+    <div id="treze-sandbox-lock" style="display: none; position: fixed; inset: 0; z-index: 99999999; background: #030304; align-items: center; justify-content: center; padding: 20px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; box-sizing: border-box; overflow-y: auto;">
+        <!-- Background Glow Overlays -->
+        <div style="position: absolute; width: 400px; height: 400px; background: rgba(59, 130, 246, 0.08); filter: blur(120px); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0; pointer-events: none;"></div>
+        <div style="position: absolute; width: 300px; height: 300px; background: rgba(14, 134, 176, 0.05); filter: blur(100px); border-radius: 50%; top: 20%; left: 30%; transform: translate(-50%, -50%); z-index: 0; pointer-events: none;"></div>
+
+        <div class="lock-card" style="position: relative; z-index: 1; background: rgba(6, 12, 28, 0.7); border: 1px solid rgba(255, 255, 255, 0.06); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px; padding: 36px 32px; max-width: 460px; width: 100%; text-align: center; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8); box-sizing: border-box; margin: auto;">
+            <!-- Header Starburst Logo/Co-branding -->
+            <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px; opacity: 0.8;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #3b82f6;">
+                    <path d="M12 0L14.7 9.3L24 12L14.7 14.7L12 24L9.3 14.7L0 12L9.3 9.3L12 0Z" fill="currentColor"/>
+                </svg>
+                <span style="font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #94a3b8; font-family: 'Inter', sans-serif;">TREZE LABS</span>
+            </div>
+
+            <!-- Lock Icon with Animating Aura -->
+            <div class="lock-icon-container" style="position: relative; margin: 0 auto 24px; width: 72px; height: 72px; display: flex; align-items: center; justify-content: center;">
+                <div class="lock-glow" style="position: absolute; inset: -4px; border-radius: 50%; background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(14, 134, 176, 0.3)); filter: blur(6px); z-index: 0; animation: lockPulse 2s infinite alternate;"></div>
+                <div style="position: relative; z-index: 1; width: 100%; height: 100%; background: rgba(10, 20, 42, 0.8); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #3b82f6;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <h2 style="color: #ffffff; font-size: 1.5rem; font-weight: 700; margin: 0 0 8px; font-family: 'Outfit', 'Inter', sans-serif; letter-spacing: -0.5px; line-height: 1.2;">Sandbox Inactivo</h2>
+            <p style="color: #94a3b8; font-size: 0.85rem; margin: 0 0 24px; line-height: 1.4; font-weight: 400;">El período de demostración de este entorno ha finalizado.</p>
+
+            <!-- Features Developed List -->
+            <div id="lock-features-list" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 20px; margin-bottom: 24px; text-align: left; font-size: 0.82rem; line-height: 1.5; color: rgba(255, 255, 255, 0.8); box-sizing: border-box;">
+                <!-- Injected dynamically -->
+            </div>
+
+            <p style="color: rgba(148, 163, 184, 0.7); font-size: 0.78rem; line-height: 1.5; margin: 0 0 24px; text-align: center;">
+                Este prototipo premium y su propiedad intelectual son exclusivos para <strong>Casas Increíbles</strong>. Para reactivar el servicio y apuntar su dominio definitivo, por favor contacte a su desarrollador.
+            </p>
+
+            <!-- Action CTAs -->
+            <div style="display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 2;">
+                <!-- Reactivate WhatsApp Button -->
+                <a href="https://wa.me/522214092478?text=Hola%20Christian%2C%20me%20gustar%C3%ADa%20reactivar%20el%20Sandbox%20de%20Casas%20Incre%C3%ADbles." 
+                   target="_blank"
+                   style="display: flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; text-decoration: none; padding: 14px 20px; border-radius: 12px; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2); box-sizing: border-box; border: 1px solid rgba(255,255,255,0.1);"
+                   onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(16, 185, 129, 0.35)';"
+                   onmouseout="this.style.transform='none'; this.style.boxShadow='0 4px 12px rgba(16, 185, 129, 0.2)';"
+                   id="treze-reactivate-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink: 0;">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Reactivar Entorno
+            </a>
+
+            <!-- FREE ONBOARDING DOCUMENT LINK (IF APPLICABLE, E.G., ON BOVEDA PAGES) -->
+            <div id="treze-free-document-container" style="display: none; margin-top: 4px;">
+                <a href="01_Requerimientos_Onboarding.html" 
+                   style="display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.2); color: #3b82f6; text-decoration: none; padding: 12px 20px; border-radius: 12px; font-weight: 500; font-size: 0.85rem; transition: all 0.2s;"
+                   onmouseover="this.style.background='rgba(59,130,246,0.15)';"
+                   onmouseout="this.style.background='rgba(59, 130, 246, 0.08)';"
+                   id="treze-onboarding-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Ver Requerimientos de Onboarding (Acceso Libre)
+                </a>
+            </div>
+
+            <!-- Secret Portfolio / Bypass Trigger -->
+            <span id="treze-portfolio-trigger" style="color: rgba(148, 163, 184, 0.4); cursor: pointer; font-size: 0.75rem; padding: 8px; transition: color 0.2s; display: inline-block; user-select: none; margin-top: 8px;"
+                  onmouseover="this.style.color='rgba(255,255,255,0.7)';"
+                  onmouseout="this.style.color='rgba(148, 163, 184, 0.4)';">
+                Ver Portafolio Treze Labs
+            </span>
+        </div>
+    </div>
+</div>
+
+<style>
+@keyframes lockPulse {
+    0% { transform: scale(0.96); opacity: 0.7; }
+    100% { transform: scale(1.04); opacity: 1; }
+}
+</style>
+
+<script>
+(function() {
+    // 1. Detect if bypass in URL query parameters is requested
+    const urlParams = new URLSearchParams(window.location.search);
+    const hasBypassParam = (urlParams.has('bypass') && urlParams.get('bypass') === 'treze2026') || urlParams.has('preview');
+    
+    if (hasBypassParam) {
+        sessionStorage.setItem('treze_sandbox_bypass', '1');
+    }
+
+    // If bypass is active in sessionStorage, do not lock the screen and exit
+    if (sessionStorage.getItem('treze_sandbox_bypass') === '1') {
+        return;
+    }
+
+    // 2. Lock screen rendering
+    // Inject CSS to hide the rest of the page instantly to prevent flash of content
+    const styleTag = document.createElement('style');
+    styleTag.innerHTML = `
+        html, body {
+            overflow: hidden !important;
+            height: 100vh !important;
+        }
+    `;
+    document.head.appendChild(styleTag);
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const lockScreen = document.getElementById('treze-sandbox-lock');
+        const listContainer = document.getElementById('lock-features-list');
+        const freeDocContainer = document.getElementById('treze-free-document-container');
+        
+        if (lockScreen && listContainer) {
+            // Determine features based on the path
+            const pathname = window.location.pathname.toLowerCase();
+            const isVCard = pathname.includes('/vcard') || window.location.hostname.includes('vcard');
+            const isBoveda = pathname.includes('/boveda');
+            
+            let listHtml = '';
+            
+            if (isBoveda) {
+                // Show Onboarding link in Bóveda lockouts
+                if (freeDocContainer) {
+                    freeDocContainer.style.display = 'block';
+                    
+                    // Adjust Onboarding link if deep in documentation subdirectory
+                    const onboardingLink = document.getElementById('treze-onboarding-link');
+                    if (onboardingLink) {
+                        if (pathname.endsWith('02_guia_de_uso_detallada.html') || pathname.endsWith('03_guia_de_infraestructura.html')) {
+                            onboardingLink.setAttribute('href', '01_Requerimientos_Onboarding.html');
+                        } else {
+                            onboardingLink.setAttribute('href', '01_Requerimientos_Onboarding.html');
+                        }
+                    }
+                }
+                
+                listHtml = `
+                    <div style="font-weight: 600; color: #f1f5f9; margin-bottom: 12px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Estatus de Entrega del Proyecto:</div>
+                    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px;flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        <div><strong style="color: #f1f5f9;">Guía de Usuario VIP</strong><span style="display:block;font-size:0.75rem;color:#94a3b8;">Manual del recomendador de estilo y ROI</span></div>
+                    </div>
+                    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px;flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        <div><strong style="color: #f1f5f9;">Infraestructura y DNS</strong><span style="display:block;font-size:0.75rem;color:#94a3b8;">Hosting serverless y configuraciones DNS</span></div>
+                    </div>
+                    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px;flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        <div><strong style="color: #f1f5f9;">Repositorio de Código</strong><span style="display:block;font-size:0.75rem;color:#94a3b8;">Propiedad intelectual 100% libre de rentas</span></div>
+                    </div>
+                    <div style="display:flex;align-items:flex-start;gap:12px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        <div><strong style="color: #10b981;">Requerimientos de Onboarding (Libre)</strong><span style="display:block;font-size:0.75rem;color:#94a3b8;">Catálogo original y activos visuales de marca</span></div>
+                    </div>
+                `;
+            } else if (isVCard) {
+                listHtml = `
+                    <div style="font-weight: 600; color: #f1f5f9; margin-bottom: 12px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Componentes VCard Inactivos:</div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Ficha de Contacto Guardable (.VCF Directo)</span></div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Enlaces Rápidos y Geolocalización Directa</span></div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Galerías Premium Intervenidas por IA</span></div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Concierge Inmobiliario a WhatsApp</span></div>
+                    <div style="display:flex;align-items:center;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Splash Screen & Co-Branding Treze Labs</span></div>
+                `;
+            } else {
+                listHtml = `
+                    <div style="font-weight: 600; color: #f1f5f9; margin-bottom: 12px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Sistemas Inmobiliarios Bloqueados:</div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Catálogo de 8 Propiedades Premium Integrado</span></div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Scrollytelling Interactivo (Canvas Sequence)</span></div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Asistente de Estilo de Vida (Quiz Lifestyle)</span></div>
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Calculadora Dinámica de ROI & Leads</span></div>
+                    <div style="display:flex;align-items:center;gap:10px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Infraestructura Serverless First en Vercel CDN</span></div>
+                `;
+            }
+            
+            listContainer.innerHTML = listHtml;
+            lockScreen.style.display = 'flex';
+
+            // 3. Bypass Trigger (Clicking 5 times to enter PIN 1313)
+            const trigger = document.getElementById('treze-portfolio-trigger');
+            let clickCount = 0;
+            if (trigger) {
+                trigger.addEventListener('click', () => {
+                    clickCount++;
+                    if (clickCount >= 5) {
+                        const pin = prompt("Ingresa el PIN de reactivación:");
+                        if (pin === "1313") {
+                            sessionStorage.setItem('treze_sandbox_bypass', '1');
+                            lockScreen.style.display = 'none';
+                            // Remove inline style overriding scroll
+                            styleTag.remove();
+                        } else {
+                            alert("Código incorrecto.");
+                            clickCount = 0;
+                        }
+                    } else {
+                        // Regular action delay (if clickCount is not incremented to 5, act normally after 800ms)
+                        setTimeout(() => {
+                            if (clickCount < 5 && clickCount > 0) {
+                                window.open('https://wa.me/522214092478?text=Hola%20Christian%2C%20me%20gustar%C3%ADa%20ver%20tu%20portafolio.', '_blank');
+                                clickCount = 0;
+                            }
+                        }, 800);
+                    }
+                });
+            }
+        }
+    });
+})();
+</script>
+
   <div class="header">
     <div>
       <span class="badge">Documento 3 de 3</span>
